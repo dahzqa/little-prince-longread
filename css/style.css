@@ -1,0 +1,690 @@
+@font-face{
+  font-family:"Helvetica Light";
+  src:url('../assets/fonts/Helvetica-Light.woff2') format('woff2'),url('../assets/fonts/Helvetica-Light.ttf') format('truetype');
+  font-weight:300;font-style:normal;font-display:swap
+}
+@font-face{
+  font-family:"Blob";
+  src:url('../assets/fonts/BlobSpongeyLowercase.woff2') format('woff2'),url('../assets/fonts/BlobSpongeyLowercase.ttf') format('truetype');
+  font-weight:400;font-style:normal;font-display:swap
+}
+:root{--s:1;--ink:#3d3d3d;--yellow:#e1cc2e;--paper:#fff}
+*{box-sizing:border-box}
+html,body{margin:0;background:#fff;color:var(--ink);font-family:"Helvetica Light",Helvetica,Arial,sans-serif;font-weight:300;font-synthesis:none;-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}
+body{overflow-x:hidden;background:#fff}
+main,.screen,.canvas,.science-horizontal,.science-panel{background:#fff}
+img,video{display:block}
+p,h1,h2{margin:0}
+.screen{height:100vh;min-height:587px;position:relative;overflow:hidden;background:#fff}
+.canvas{position:absolute;width:1046px;height:587px;left:50%;top:50%;transform:translate(-50%,-50%) scale(var(--s));transform-origin:center center;background:#fff}
+.body{font-family:"Helvetica Light",Helvetica,Arial,sans-serif;font-size:24px;line-height:1.29;letter-spacing:-.038em;font-weight:300}
+.small{font-family:"Helvetica Light",Helvetica,Arial,sans-serif;font-size:20px;line-height:1.2;letter-spacing:-.038em;font-weight:300}
+.reveal-word{opacity:0}.yellow{color:var(--yellow)}
+
+/* ---------- already approved part ---------- */
+.hero .author,.hero .curator{position:absolute;top:31.5px;font-family:"Helvetica Light",Helvetica,Arial,sans-serif;font-size:18px;line-height:1;font-weight:300}
+.author{left:205.9px}.curator{left:629.4px}
+.hero h1{position:absolute;left:207.9px;top:243.7px;font-family:Blob,sans-serif;font-size:63px;line-height:.89;letter-spacing:-.018em;font-weight:400;white-space:nowrap}
+.title-line{display:block;position:relative;white-space:nowrap;width:max-content}.hero-char{position:absolute;display:block;will-change:transform;letter-spacing:0}
+.hint{position:absolute;left:484.1px;top:521.2px;width:78.3px;text-align:center;font-size:18px;line-height:1;font-weight:300}.hint span{display:block;font-size:29px;margin-top:8px;will-change:transform}
+.intro{position:absolute;left:206.9px;top:204.8px;width:614px}.intro p+p{margin-top:32px}
+.polaroid{position:absolute;will-change:transform,opacity}.polaroid .frame,.polaroid .photo{position:absolute;transform-origin:0 0;will-change:transform}
+.castle .frame{left:0;top:0;width:296.327px;height:473.878px;transform:rotate(-2.86307deg)}.castle .photo{left:27.826px;top:39.83px;width:237.876px;height:359.482px;object-fit:cover;transform:rotate(-3.22603deg)}.castle{left:666px;top:61.8px;width:320px;height:488px;z-index:2}
+.girl{position:absolute;object-fit:contain;will-change:transform,opacity}.g1{left:578.147px;top:186px;width:84.644px;height:223.587px;transform:rotate(3.37114deg);transform-origin:0 0;z-index:1}
+.q1{position:absolute;left:206.82px;top:230.2px;z-index:3}.q2{position:absolute;left:206.68px;top:331.4px;z-index:3}
+.dash{position:absolute;display:block;width:9px;height:1.5px;background:var(--ink);will-change:opacity;z-index:3}
+.d31{left:542.3px;top:261.6px;transform:rotate(30deg)}.d32{left:542.3px;top:315.6px;transform:rotate(-30deg)}
+.memory{position:absolute;left:206.1px;width:624px}.memory .memory-mark{color:var(--ink)}.m1{top:91.6px}
+.selfie{left:45.57px;top:226.37px;width:320px;height:355px}.selfie .frame{left:0;top:0;width:284.194px;height:325.479px;transform:rotate(-6.35327deg)}.selfie .photo{left:30.116px;top:27.56px;width:226.587px;height:226.587px;object-fit:cover;transform:rotate(-6.35327deg)}
+.ground{left:707.122px;top:161px;width:300px;height:360px}.ground .frame{left:0;top:0;width:276.799px;height:317.01px;transform:rotate(9.84209deg)}.ground .photo{left:20.684px;top:33.96px;width:220.691px;height:220.691px;object-fit:cover;transform:rotate(9.84209deg)}
+.m2{left:206.95px;top:80px;width:599px}
+.art{left:61.161px;top:246px}.art .frame{left:0;top:0;width:261.139px;height:299.074px;transform:rotate(4.05733deg)}.art .photo{left:22.956px;top:29.7px;width:208px;height:208px;object-fit:cover;transform:rotate(4.05733deg)}
+.catbench{left:217px;top:196.86px}.catbench .frame{left:0;top:0;width:261.82px;height:299.854px;transform:rotate(-6.9892deg)}.catbench .photo{left:28.295px;top:24.81px;width:208.543px;height:208.543px;object-fit:cover;transform:rotate(-6.9892deg)}
+.sea{left:487.485px;top:171px}.sea .frame{left:0;top:0;width:268px;height:384px;transform:rotate(5.75197deg)}.sea .photo{left:21.968px;top:31.36px;width:214px;height:285px;object-fit:cover;transform:rotate(5.75197deg)}
+.woods{left:675px;top:242.64px}.woods .frame{left:0;top:0;width:351.423px;height:289.464px;transform:rotate(-1.89826deg)}.woods .photo{left:35.668px;top:24px;width:277.201px;height:207.901px;object-fit:cover;transform:rotate(-1.89826deg)}
+.unique{position:absolute;left:207.064px;top:251.6px;width:608px}.unique span{color:var(--ink)}.paint-letter{display:inline;color:var(--ink)}
+
+/* changed first girl/prince dialogue, geometry follows the SVG states */
+.g2{left:269.497px;top:50px;width:84.644px;height:223.587px;transform:matrix(-.99827,.0588036,.0588036,.99827,0,0);transform-origin:0 0}
+.prince{position:absolute;left:764px;top:285px;width:76px;height:232px;object-fit:contain;will-change:transform,opacity}
+.r1a,.r1b{position:absolute;left:308.06px;top:149.42px}.r2a{position:absolute;left:686.9px;top:386.4px}.r2b{position:absolute;left:412px;top:386.42px}
+.d71{left:281.812px;top:131.44px;transform:rotate(18deg)}.d72{left:753.333px;top:366.44px;transform:rotate(-18deg)}
+
+.reflection{position:absolute;left:206.168px;top:167px;width:611px}
+.video-canvas{overflow:hidden}.memory-video{position:absolute;left:207px;top:56px;width:634.308px;height:476px;object-fit:cover;background:#fff}
+.science-horizontal{height:100vh;min-height:587px;position:relative;overflow:hidden;background:#fff}.science-track{height:100%;width:300vw;display:flex;will-change:transform;background:#fff}.science-panel{height:100vh;min-height:587px;flex:0 0 100vw;position:relative;overflow:hidden;background:#fff}
+.science-title{position:absolute;left:208.092px;top:207.1px;font-family:Blob,sans-serif;font-size:55px;line-height:1.05;letter-spacing:-.018em;font-weight:400;white-space:nowrap}.science-text{position:absolute;left:206px;width:630px}.st1{top:184px}.st2{top:165px}
+.g3{left:269.497px;top:111px;width:84.644px;height:223.587px;transform:matrix(-.99827,.0588036,.0588036,.99827,0,0);transform-origin:0 0}.question{position:absolute;left:308.12px;top:210.6px}.d13{left:281.812px;top:192.4px;transform:rotate(18deg)}
+.final{position:absolute;left:206.784px;top:182.6px;width:629px}.final p+p{margin-top:34px}.final-mark{color:var(--ink)}
+
+/* ---------- new continuation ---------- */
+.possession-prince{position:absolute;left:283px;top:50px;width:76px;height:232px;object-fit:contain;transform:scaleX(-1);will-change:transform,opacity}.possession-dash-prince{left:282px;top:131px;transform:rotate(18deg)}.possession-prince-rep{position:absolute;left:309px;top:145px}
+.garden-state{position:absolute;inset:0}.garden-rep{position:absolute;left:309px;top:58px}.garden-dash{left:684px;top:140px;transform:rotate(27deg)}.garden-illustration{position:absolute;left:506px;top:150px;width:334px;height:181px;object-fit:cover}
+.possession-girl-state{position:absolute;inset:0}.possession-girl{left:269.497px;top:50px;width:84.644px;height:223.587px;transform:matrix(-.99827,.0588036,.0588036,.99827,0,0);transform-origin:0 0}.possession-dash-girl{left:282px;top:131px;transform:rotate(18deg)}.possession-girl-rep{position:absolute;left:309px;top:164px}
+
+.worn-photo-copy{position:absolute;left:207px;top:160px;width:470px}.worn-photo-card{position:absolute;left:672px;top:50px;width:282px;height:432px;transform:rotate(3.39deg);overflow:hidden;background:#f7f7f7;box-shadow:0 0 0 1px rgba(0,0,0,.04);will-change:transform,opacity}.worn-photo-card img{width:100%;height:100%;object-fit:cover}
+
+.rose-care-copy{position:absolute;left:207px;top:62px;width:650px}.rose-care-girl{left:269.497px;top:260px;width:84.644px;height:223.587px;transform:matrix(-.99827,.0588036,.0588036,.99827,0,0);transform-origin:0 0}.rose-care-rose{position:absolute;left:356px;top:225px;width:308px;height:308px;object-fit:cover}.rose-care-prince{position:absolute;left:764px;top:263px;width:76px;height:232px;object-fit:contain}
+.magic-thinking{position:absolute;left:207px;top:125px;width:640px}
+
+.new-polaroid{position:absolute;background:#f5f5f1;padding:16px 14px 48px;box-shadow:0 1px 2px rgba(0,0,0,.12);will-change:transform,opacity;transform-origin:center}.new-polaroid>img,.new-polaroid-photo{width:100%;height:100%;object-fit:cover}.compare-left{left:194px;top:93px;width:242px;height:365px;transform:rotate(-7deg)}.compare-right{left:610px;top:88px;width:247px;height:372px;transform:rotate(1.7deg)}.compare-color,.compare-bw{position:absolute}.compare-bw{opacity:0}
+.restore-copy{position:absolute;left:207px;top:131px;width:565px}
+
+.garden-intro-girl{left:269.497px;top:50px;width:84.644px;height:223.587px;transform:matrix(-.99827,.0588036,.0588036,.99827,0,0);transform-origin:0 0}.garden-intro-dash{left:282px;top:131px;transform:rotate(18deg)}.garden-intro-copy{position:absolute;left:309px;top:149px;width:400px}
+.quote-copy{position:absolute;left:207px;top:80px;width:610px}
+
+.fox-girl{left:269.497px;top:50px;width:84.644px;height:223.587px;transform:matrix(-.99827,.0588036,.0588036,.99827,0,0);transform-origin:0 0}.fox-dash-girl{left:282px;top:131px;transform:rotate(18deg)}.fox-girl-copy{position:absolute;left:309px;top:149px}.fox-prince{position:absolute;left:764px;top:285px;width:76px;height:232px;object-fit:contain}.fox-dash-prince{left:753px;top:366px;transform:rotate(-18deg)}.fox-prince-copy{position:absolute;left:374px;top:401px;width:410px}
+
+.travel-collage-scene .new-polaroid{padding:14px 12px 42px}.travel{height:250px}.travel.p1{left:72px;top:70px;width:270px;transform:rotate(-6.6deg)}.travel.p2{left:385px;top:72px;width:255px;transform:rotate(5.9deg)}.travel.p3{left:620px;top:90px;width:340px;transform:rotate(-3.8deg)}.travel.p4{left:60px;top:285px;width:265px;transform:rotate(4deg)}.travel.p5{left:300px;top:300px;width:300px;transform:rotate(-9.7deg)}.travel.p6{left:580px;top:280px;width:360px;transform:rotate(2.2deg)}
+
+.fear-main{position:absolute;left:207px;top:80px;width:650px}.fear-prince{position:absolute;left:764px;top:190px;width:76px;height:232px;object-fit:contain}.fear-dash-prince{left:753px;top:275px;transform:rotate(-18deg)}.fear-prince-copy{position:absolute;left:417px;top:292px}.fear-girl{left:269.497px;top:290px;width:84.644px;height:223.587px;transform:matrix(-.99827,.0588036,.0588036,.99827,0,0);transform-origin:0 0}.fear-dash-girl{left:282px;top:375px;transform:rotate(18deg)}.fear-girl-copy{position:absolute;left:309px;top:390px}
+.people-copy{position:absolute;left:207px;top:142px;width:620px}
+
+.human-girl{left:269.497px;top:50px;width:84.644px;height:223.587px;transform:matrix(-.99827,.0588036,.0588036,.99827,0,0);transform-origin:0 0}.human-dash{left:282px;top:131px;transform:rotate(18deg)}.human-rep{position:absolute;left:309px;top:149px;width:440px}.human-r2{left:328px;top:324px;width:520px}.human-r3,.human-r4{left:309px;top:149px}.human-r4 .yellow{color:var(--yellow)}
+.prince-story-copy{position:absolute;left:207px;top:126px;width:625px}
+
+.synthesis-girl{left:269.497px;top:205px;width:84.644px;height:223.587px;transform:matrix(-.99827,.0588036,.0588036,.99827,0,0);transform-origin:0 0}.synthesis-photo{left:318px;top:120px;width:180px;height:273px;transform:rotate(3.03deg);padding:11px 10px 35px}.synthesis-rose{position:absolute;left:493px;top:110px;width:331px;height:331px;object-fit:cover;transform:rotate(-2.56deg)}.synthesis-prince{position:absolute;left:764px;top:210px;width:76px;height:232px;object-fit:contain}
+.rose-unique-copy{position:absolute;left:207px;top:131px;width:625px}
+
+.thesis-title{position:absolute;left:207px;top:105px;font-family:Blob,sans-serif;font-size:55px;line-height:.9;letter-spacing:-.018em;font-weight:400}.thesis-title span{display:inline-block;will-change:transform,opacity}
+
+.finale-main-photo{left:425px;top:64px;width:190px;height:306px;transform:rotate(-2.1deg);padding:12px 10px 38px}.finale-girl{left:372.497px;top:200px;width:68px;height:180px;transform:matrix(-.99827,.0588036,.0588036,.99827,0,0);transform-origin:0 0}.finale-prince{position:absolute;left:655px;top:203px;width:62px;height:190px;object-fit:contain}
+.mini-pol{position:absolute;background:#f6f6f2;padding:7px 6px 20px;box-shadow:0 1px 2px rgba(0,0,0,.12);transform-origin:center;will-change:transform,opacity}.mini-pol img{width:100%;height:100%;object-fit:cover}
+.finale-left .m1{left:88px;top:74px;width:96px;height:112px;transform:rotate(-7deg)}.finale-left .m2{left:56px;top:188px;width:88px;height:95px;transform:rotate(7deg)}.finale-left .m3{left:24px;top:286px;width:126px;height:104px;transform:rotate(-14deg)}.finale-left .m4{left:108px;top:365px;width:142px;height:108px;transform:rotate(-7deg)}.finale-left .m5{left:190px;top:145px;width:110px;height:91px;transform:rotate(-7deg)}.finale-left .m6{left:246px;top:72px;width:86px;height:100px;transform:rotate(7deg)}
+.finale-right .r1{left:672px;top:72px;width:86px;height:100px;transform:rotate(8deg)}.finale-right .r2{left:758px;top:122px;width:118px;height:96px;transform:rotate(-7deg)}.finale-right .r3{left:848px;top:176px;width:126px;height:93px;transform:rotate(10deg)}.finale-right .r4{left:757px;top:245px;width:108px;height:90px;transform:rotate(8deg)}.finale-right .r5{left:875px;top:286px;width:116px;height:88px;transform:rotate(7deg)}.finale-right .r6{left:745px;top:348px;width:112px;height:92px;transform:rotate(-6deg)}.finale-right .r7{left:866px;top:382px;width:112px;height:92px;transform:rotate(9deg)}.finale-right .r8{left:708px;top:422px;width:92px;height:80px;transform:rotate(-7deg)}
+.finale-copy{position:absolute;left:207px;top:455px;width:620px}.to-start{position:absolute;left:479px;top:513px;border:0;background:transparent;color:var(--ink);font:300 17px/1.1 "Helvetica Light",Helvetica,Arial,sans-serif;cursor:pointer;text-align:center}.to-start span{display:block;font-size:30px;margin-bottom:4px}.finale-note{position:absolute;left:284px;top:570px;font-size:11px;white-space:nowrap}
+
+/* star */
+.star{position:fixed;left:0;top:0;width:48px;height:auto;z-index:100;pointer-events:none;opacity:0;will-change:transform;transform:translate3d(-100px,-100px,0)}.star img{display:block;width:100%;height:auto;filter:drop-shadow(0 0 8px rgba(255,213,74,.85)) drop-shadow(0 0 22px rgba(255,213,74,.45));animation:starPulse 2.6s ease-in-out infinite}@keyframes starPulse{50%{transform:scale(.82);filter:drop-shadow(0 0 4px rgba(255,213,74,.6))}}.spark{position:fixed;left:0;top:0;z-index:99;pointer-events:none;border-radius:50%;background:radial-gradient(circle,rgba(255,213,74,.95),rgba(255,213,74,0));will-change:transform,opacity}
+@media (prefers-reduced-motion:reduce){.star,.spark{display:none!important}}
+.human-prince{position:absolute;left:764px;top:208px;width:76px;height:232px;object-fit:contain;will-change:transform,opacity}.human-dash-prince{left:753px;top:292px;transform:rotate(-18deg)}
+
+/* ---------- corrections from Frame78(2) ---------- */
+.q2a,.q2b{display:inline-block;will-change:opacity}
+
+/* s6 keeps the previous four photographs at first; the animation removes only them. */
+#s6 .unique-photos{position:absolute;inset:0;z-index:1;pointer-events:none}
+#s6 .unique{z-index:3}
+#s6 .unique-memory-photo{opacity:1}
+
+/* exact second speaker on the ownership question state from the SVG */
+.question-prince{position:absolute;left:764px;top:346px;width:76px;height:232px;object-fit:contain;will-change:transform,opacity}
+.question-prince-dash{left:753.333px;top:427.4px;transform:rotate(-18deg)}
+.question-prince-copy{position:absolute;left:562.019px;top:447.7px;white-space:nowrap}
+
+/* research sequence: one pinned horizontal strip, same 1046x587 geometry as the SVG */
+.attachment-horizontal{height:100vh;min-height:587px;position:relative;overflow:hidden;background:#fff}
+.attachment-track{height:100%;width:500vw;display:flex;will-change:transform;background:#fff}
+.attachment-panel{height:100vh;min-height:587px;flex:0 0 100vw;position:relative;overflow:hidden;background:#fff}
+.attachment-question{position:absolute;left:206.7px;top:112px;width:520px;font-family:Blob,sans-serif;font-size:55px;line-height:.88;letter-spacing:-.018em;font-weight:400}
+.attachment-copy{position:absolute;left:206.8px;top:151px;width:630px}
+
+/* the supplied photograph is already a complete polaroid composite */
+.worn-photo-card{position:absolute;left:655px;top:66px;width:310px;height:455px;object-fit:contain;transform:rotate(3.39deg);background:transparent;box-shadow:none;overflow:visible;will-change:transform,opacity}
+.worn-photo-card img{display:none}
+.compare-left-provided{position:absolute;left:176px;top:66px;width:285px;height:430px;object-fit:contain;transform:rotate(-6.65deg);will-change:transform,opacity}
+
+/* text exists first; the travel photographs progressively cover it. */
+.travel-copy{position:absolute;left:206px;top:128px;width:628px;z-index:0}
+.travel-collage-scene .travel{z-index:2}
+
+/* photographs from the exact SVG continuation of the human-dialogue state */
+.human-photos{position:absolute;inset:0;pointer-events:none}
+.human-photo{height:198px;padding:12px 10px 34px;z-index:2}
+.human-photo img{width:100%;height:100%;object-fit:cover}
+.hp1{left:655px;top:104px;width:233px;transform:rotate(-7.4244deg)}
+.hp2{left:778px;top:206px;width:241px;transform:rotate(5.08384deg)}
+.hp3{left:594px;top:318px;width:224px;transform:rotate(-7.2474deg)}
+
+/* first possession state is deliberately centred before it changes to the garden state */
+.possession-prince{left:485px;top:122px;transform:none}
+.possession-dash-prince{left:474px;top:205px;transform:rotate(-18deg)}
+.possession-prince-rep{left:300px;top:367px;width:446px;text-align:center}
+
+/* ---------- October 27 polish pass ---------- */
+.first-photo-scene .dialog-copy{position:absolute;font-family:"Helvetica Light",Helvetica,Arial,sans-serif;font-size:24px;line-height:1.18;letter-spacing:-.04em;font-weight:300;z-index:3}
+.first-photo-scene .q0{left:206px;top:92px;width:390px}
+.first-photo-scene .q1{left:206px;top:243px;width:415px}
+.first-photo-scene .q2{left:206px;top:357px;width:430px}
+.first-photo-scene .g1{left:657px;top:172px;width:85px;height:224px;transform:rotate(2.5deg)}
+.first-photo-scene .castle{left:782px;top:40px;width:235px;height:394px;z-index:2}
+.first-photo-scene .castle .frame{width:271px;height:434px;transform:rotate(-2.86deg)}
+.first-photo-scene .castle .photo{left:26px;top:37px;width:217px;height:327px;transform:rotate(-3.22deg)}
+.first-photo-scene .d31{left:620px;top:267px;transform:rotate(28deg)}
+.first-photo-scene .d32{left:620px;top:377px;transform:rotate(-28deg)}
+
+#s6 .unique{left:176px;top:206px;width:690px;z-index:3}
+#s6 .unique-photos .frame,#s6 .unique-photos .photo{position:absolute;transform-origin:0 0}
+#s6 .unique-selfie{left:52px;top:24px;width:286px;height:305px}
+#s6 .unique-selfie .frame{left:0;top:0;width:261px;height:299px;transform:rotate(-6.2deg)}
+#s6 .unique-selfie .photo{left:25px;top:25px;width:209px;height:209px;transform:rotate(-6.2deg);object-fit:cover}
+#s6 .unique-ground{left:804px;top:44px;width:230px;height:242px}
+#s6 .unique-ground .frame{left:0;top:0;width:198px;height:227px;transform:rotate(9.4deg)}
+#s6 .unique-ground .photo{left:16px;top:25px;width:160px;height:160px;transform:rotate(9.4deg);object-fit:cover}
+#s6 .unique-art{left:0px;top:360px;width:246px;height:266px}
+#s6 .unique-art .frame{left:0;top:0;width:228px;height:261px;transform:rotate(4deg)}
+#s6 .unique-art .photo{left:20px;top:24px;width:182px;height:182px;transform:rotate(4deg);object-fit:cover}
+#s6 .unique-catbench{left:250px;top:365px;width:260px;height:270px}
+#s6 .unique-catbench .frame{left:0;top:0;width:232px;height:266px;transform:rotate(-7deg)}
+#s6 .unique-catbench .photo{left:24px;top:22px;width:184px;height:184px;transform:rotate(-7deg);object-fit:cover}
+#s6 .unique-sea{left:517px;top:350px;width:240px;height:286px}
+#s6 .unique-sea .frame{left:0;top:0;width:206px;height:296px;transform:rotate(5.6deg)}
+#s6 .unique-sea .photo{left:17px;top:24px;width:164px;height:219px;transform:rotate(5.6deg);object-fit:cover}
+#s6 .unique-woods{left:787px;top:321px;width:287px;height:252px}
+#s6 .unique-woods .frame{left:0;top:0;width:257px;height:212px;transform:rotate(-1.8deg)}
+#s6 .unique-woods .photo{left:26px;top:21px;width:202px;height:152px;transform:rotate(-1.8deg);object-fit:cover}
+
+.reflection{left:189px;top:160px;width:685px}
+.reflection p+p{margin-top:56px}
+
+/* fine-tune possession sequence to the screenshots */
+.possession-prince{left:238px;top:145px;width:84px;height:255px;transform:scaleX(-1)}
+.possession-dash-prince{left:334px;top:222px;transform:rotate(18deg)}
+.possession-prince-rep{left:343px;top:205px;width:390px;text-align:left}
+.garden-rep{left:344px;top:40px;width:360px}
+.garden-dash{left:724px;top:129px;transform:rotate(27deg)}
+.garden-illustration{left:633px;top:158px;width:340px;height:267px;object-fit:contain}
+.possession-girl{left:228px;top:310px;width:86px;height:226px;transform:matrix(-.99827,.0588036,.0588036,.99827,0,0)}
+.possession-dash-girl{left:329px;top:386px;transform:rotate(18deg)}
+.possession-girl-rep{left:343px;top:395px;width:392px}
+
+/* use the supplied polaroid composites on the human screen */
+.human-photo{position:absolute;object-fit:contain;z-index:2;will-change:transform,opacity}
+.human-photo img{display:none}
+.hp1{left:688px;top:182px;width:285px;height:245px;transform:rotate(-7deg)}
+.hp2{left:646px;top:270px;width:288px;height:250px;transform:rotate(5deg)}
+.hp3{left:620px;top:390px;width:284px;height:245px;transform:rotate(-6deg)}
+.human-r4{left:309px;top:146px;width:470px}
+
+/* smoother thesis idle motion */
+.thesis-title span{backface-visibility:hidden;transform:translateZ(0)}
+
+/* ---------- October 27 layout correction pass: align to supplied SVG/screens ---------- */
+
+/* Screen 3 — exact composition from supplied SVG */
+#s3 .first-photo-scene .dialog-copy{position:absolute;font-family:"Helvetica Light",Helvetica,Arial,sans-serif;font-size:24px;line-height:1.18;letter-spacing:-.04em;font-weight:300;z-index:3}
+#s3 .first-photo-scene .q0{left:206px;top:208px;width:322px}
+#s3 .first-photo-scene .q1{left:206px;top:289px;width:360px}
+#s3 .first-photo-scene .q2{left:206px;top:358px;width:380px}
+#s3 .first-photo-scene .castle{left:666px;top:81px;width:296.327px;height:473.878px;padding:0;background:transparent;box-shadow:none;transform:rotate(-2.863deg);transform-origin:0 0;z-index:2}
+#s3 .first-photo-scene .castle .photo{display:none}
+#s3 .first-photo-scene .castle .frame{display:none}
+#s3 .first-photo-scene .g1{left:586.148px;top:205px;width:84.644px;height:223.587px;transform:rotate(3.371deg);transform-origin:0 0}
+#s3 .first-photo-scene .d31{left:544px;top:255px;transform:rotate(28deg)}
+#s3 .first-photo-scene .d32{left:544px;top:358px;transform:rotate(-28deg)}
+
+/* Screen 6 — align every polaroid to the supplied SVG */
+#s6 .unique{left:208px;top:285px;width:640px;z-index:3}
+#s6 .unique-photos .polaroid{background:#f6f6f2;box-shadow:0 1px 2px rgba(0,0,0,.12)}
+#s6 .unique-photos .frame{display:none}
+#s6 .unique-photos .photo{position:static;width:100%;height:100%;object-fit:cover;transform:none}
+#s6 .unique-selfie{left:127px;top:31.479px;width:169.168px;height:169.168px;padding:20.577px 20.525px 53.255px 22.484px;transform:rotate(-6.353deg)}
+#s6 .unique-ground{left:724.17px;top:17px;width:151.38px;height:151.38px;padding:23.294px 24.13px 42.775px 14.187px;transform:rotate(9.842deg)}
+#s6 .unique-art{left:78.398px;top:359px;width:151.365px;height:151.365px;padding:21.612px 21.962px 44.664px 16.708px;transform:rotate(4.057deg)}
+#s6 .unique-catbench{left:301px;top:380.569px;width:147.733px;height:147.733px;padding:17.578px 18.696px 47.107px 20.045px;transform:rotate(-6.989deg)}
+#s6 .unique-sea{left:552.068px;top:357px;width:122.64px;height:163.52px;padding:17.982px 18.368px 38.691px 12.598px;transform:rotate(5.752deg)}
+#s6 .unique-woods{left:724px;top:346.537px;width:227.096px;height:170.322px;padding:19.664px 34.804px 47.156px 29.221px;transform:rotate(-1.898deg)}
+
+/* Screen 15 — match the supplied screenshot */
+#s15 .possession-prince{left:214px;top:182px;width:74px;height:219px;transform:scaleX(-1)}
+#s15 .possession-dash-prince{left:295px;top:242px;transform:rotate(18deg)}
+#s15 .possession-prince-rep{left:306px;top:251px;width:372px;text-align:left}
+
+/* Screen 32 — final layout from supplied SVG */
+#s32 .finale-main-photo{left:414px;top:6.73px;width:180.496px;height:272.769px;padding:30.637px 23.846px 56.165px 20.506px;background:#f5f5f1;box-shadow:0 1px 2px rgba(0,0,0,.12);transform:rotate(-1.715deg)}
+#s32 .finale-main-photo>img{width:100%;height:100%;object-fit:cover;transform:rotate(-0.363deg)}
+#s32 .finale-girl{left:381.496px;top:138.793px;width:84.644px;height:223.587px;transform:scaleX(-1) rotate(3.37deg)}
+#s32 .finale-prince{left:664px;top:138.793px;width:76px;height:232px;transform:none}
+
+#s32 .m1{left:290.246px;top:0px;width:76.049px;height:76.049px;padding:11.621px 12.128px 21.677px 7.301px;transform:rotate(9.606deg)}
+#s32 .m2{left:67.717px;top:89px;width:75.851px;height:75.851px;padding:10.836px 13.288px 22.376px 8.373px;transform:rotate(4.057deg)}
+#s32 .m3{left:27px;top:198.051px;width:115.213px;height:86.41px;padding:7.808px 11.975px 30.127px 14.018px;transform:rotate(-16.054deg)}
+#s32 .m4{left:112.201px;top:269.957px;width:139.343px;height:92.315px;padding:9.457px 16.97px 28.66px 17.91px;transform:rotate(-7.701deg)}
+#s32 .m5{left:186px;top:86.551px;width:103.088px;height:68.296px;padding:6.75px 12.233px 22.507px 12.982px;transform:rotate(-9.669deg)}
+#s32 .m6{left:185.139px;top:147px;width:101.82px;height:76.365px;padding:86.516px 24.091px -54.869px 2.334px;transform:rotate(6.454deg)}
+
+#s32 .r1{left:836.033px;top:2px;width:77.993px;height:103.991px;padding:11.441px 11.725px 24.6px 8.012px;transform:rotate(5.752deg)}
+#s32 .r2{left:888px;top:163.859px;width:112.7px;height:84.525px;padding:9.34px 14.611px 27.527px 14.678px;transform:rotate(-8.448deg)}
+#s32 .r3{left:734px;top:94.688px;width:100.887px;height:75.665px;padding:6.312px 13.695px 23.373px 14.318px;transform:rotate(-12.044deg)}
+#s32 .r4{left:765.473px;top:133px;width:122.495px;height:91.871px;padding:104.02px 30.624px -65.947px 2.918px;transform:rotate(6.394deg)}
+#s32 .r5{left:900.213px;top:231px;width:108.207px;height:71.687px;padding:10.789px 15.467px 19.915px 10.293px;transform:rotate(7.979deg)}
+#s32 .r6{left:898.342px;top:62px;width:104.617px;height:78.463px;padding:13.285px 17.561px 20.937px 8.635px;transform:rotate(15.092deg)}
+#s32 .r7{left:761.037px;top:255.105px;width:120.267px;height:90.2px;padding:100.989px 30.066px -63.609px 15.463px;transform:rotate(-0.704deg)}
+#s32 .r8{left:683.762px;top:8px;width:80.479px;height:80.479px;padding:12.387px 20.461px 22.737px 7.541px;transform:rotate(9.842deg)}
+
+#s32 .mini-pol{background:#f6f6f2;box-shadow:0 1px 2px rgba(0,0,0,.12)}
+#s32 .mini-pol img{width:100%;height:100%;object-fit:cover}
+#s32 .finale-copy{left:214px;top:402px;width:620px;text-align:left}
+#s32 .to-start{left:530px;top:487px;transform:translateX(-50%)}
+#s32 .finale-note{left:293px;top:568px;width:460px;text-align:left}
+
+/* landscape photographs inside rotated polaroids on the final screen */
+#s32 .m6{left:185.139px;top:147px;width:101.82px;height:76.365px;padding:14px 13px 18px 12px;transform:rotate(6.454deg)}
+#s32 .r4{left:765.473px;top:133px;width:122.495px;height:91.871px;padding:15px 15px 23px 15px;transform:rotate(6.394deg)}
+#s32 .r7{left:761.037px;top:255.105px;width:120.267px;height:90.2px;padding:15px 15px 22px 15px;transform:rotate(-0.704deg)}
+
+/* ---------- FINAL FIGMA-ASSET PASS: never redraw supplied polaroids ---------- */
+.exact-polaroid{position:absolute!important;display:block!important;padding:0!important;background:transparent!important;box-shadow:none!important;object-fit:contain!important;transform:none}
+
+/* s3 — exact exported Frame 51, placed on the SVG visual bounds */
+#s3 .castle{left:666px!important;top:66px!important;width:319.63px!important;height:488.09px!important;z-index:2!important}
+
+/* s4 — exact Figma exports */
+#s4 .selfie{left:45.57px!important;top:194.92px!important;width:318.47px!important;height:354.93px!important}
+#s4 .ground{left:652.93px!important;top:161px!important;width:326.91px!important;height:359.66px!important}
+
+/* s5 — exact Figma exports */
+#s5 .art{left:40px!important;top:246px!important;width:281.65px!important;height:316.8px!important}
+#s5 .catbench{left:217px!important;top:165px!important;width:296.36px!important;height:329.48px!important}
+#s5 .sea{left:449px!important;top:171px!important;width:305.14px!important;height:408.93px!important}
+#s5 .woods{left:675px!important;top:231px!important;width:360.82px!important;height:300.95px!important}
+
+/* s6 — six exact exports from Frame 77–82 */
+#s6 .unique-selfie{left:127px!important;top:8px!important;width:237.76px!important;height:264.99px!important}
+#s6 .unique-ground{left:687px!important;top:17px!important;width:224.24px!important;height:246.7px!important}
+#s6 .unique-art{left:63px!important;top:359px!important;width:204.96px!important;height:230.54px!important}
+#s6 .unique-catbench{left:301px!important;top:358px!important;width:209.94px!important;height:233.41px!important}
+#s6 .unique-sea{left:530px!important;top:357px!important;width:174.97px!important;height:234.49px!important}
+#s6 .unique-woods{left:724px!important;top:337px!important;width:295.6px!important;height:246.55px!important}
+#s6 .unique{left:208px!important;top:285px!important;width:640px!important}
+
+/* s24 — exact travel polaroids from the general SVG final state */
+#s24 .travel{position:absolute!important;display:block!important;padding:0!important;background:transparent!important;box-shadow:none!important;object-fit:contain!important;transform:none}
+#s24 .travel.p1{left:50px!important;top:32.99px!important;width:349.82px!important;height:312.07px!important}
+#s24 .travel.p2{left:339.92px!important;top:64.4px!important;width:322.26px!important;height:290.62px!important}
+#s24 .travel.p3{left:581px!important;top:102.97px!important;width:421.69px!important;height:332.78px!important}
+#s24 .travel.p4{left:25px!important;top:264px!important;width:338.93px!important;height:295.81px!important}
+#s24 .travel.p5{left:254px!important;top:234px!important;width:411.72px!important;height:339.24px!important}
+#s24 .travel.p6{left:527.9px!important;top:235.1px!important;width:454.64px!important;height:347.68px!important}
+
+/* s27 — exact three supplied images, no reconstructed frames */
+#s27 .human-photo{position:absolute!important;padding:0!important;background:transparent!important;box-shadow:none!important;object-fit:contain!important;transform:none}
+#s27 .hp1{left:655px!important;top:73.89px!important;width:256.6px!important;height:226.19px!important}
+#s27 .hp2{left:760px!important;top:206px!important;width:258.47px!important;height:225.33px!important}
+#s27 .hp3{left:594px!important;top:289.72px!important;width:246.4px!important;height:217.02px!important}
+
+/* s32 — exact Frame 135–149 and Frame 51 from the final SVG state */
+#s32 .finale-main-photo{left:405px!important;top:-0.03px!important;width:235.51px!important;height:366.14px!important}
+#s32 .mini-pol{position:absolute!important;display:block!important;padding:0!important;background:transparent!important;box-shadow:none!important;object-fit:contain!important;transform:none}
+#s32 .m1{left:96px!important;top:14.03px!important;width:116.13px!important;height:129.43px!important}
+#s32 .m2{left:51px!important;top:89px!important;width:102.71px!important;height:115.53px!important}
+#s32 .m3{left:18px!important;top:159.05px!important;width:170.09px!important;height:158.55px!important}
+#s32 .m4{left:103.2px!important;top:246.65px!important;width:190.13px!important;height:152.6px!important}
+#s32 .m5{left:177px!important;top:65.05px!important;width:142.87px!important;height:117.72px!important}
+#s32 .m6{left:164px!important;top:147px!important;width:138.61px!important;height:121.63px!important}
+#s32 .m7{left:263px!important;top:0px!important;width:112.38px!important;height:123.75px!important}
+#s32 .r1{left:655px!important;top:8px!important;width:119.21px!important;height:131.16px!important}
+#s32 .r2{left:725px!important;top:68.01px!important;width:147.07px!important;height:129.72px!important}
+#s32 .r3{left:813px!important;top:2px!important;width:111.27px!important;height:149.12px!important}
+#s32 .r4{left:742px!important;top:133px!important;width:166.64px!important;height:146.19px!important}
+#s32 .r5{left:879px!important;top:143.04px!important;width:158.28px!important;height:140.94px!important}
+#s32 .r6{left:860px!important;top:62px!important;width:155.03px!important;height:142.69px!important}
+#s32 .r7{left:877px!important;top:231px!important;width:147.09px!important;height:120.03px!important}
+#s32 .r8{left:752.04px!important;top:253.25px!important;width:151.89px!important;height:129.42px!important}
+#s32 .finale-girl{left:372.497px!important;top:138.8px!important;width:84.644px!important;height:223.587px!important}
+#s32 .finale-prince{left:655px!important;top:138.8px!important;width:76px!important;height:232px!important}
+#s32 .finale-copy{left:214px!important;top:402px!important;width:620px!important}
+#s32 .to-start{left:530px!important;top:487px!important;transform:translateX(-50%)!important}
+#s32 .finale-note{left:293px!important;top:568px!important}
+
+/* exact photo object wherever the same Figma polaroid is reused */
+#s19 .compare-left{left:167.76px!important;top:62.09px!important;width:310.41px!important;height:448.87px!important;transform:none}
+#s19 .compare-right{left:573.11px!important;top:45.5px!important;width:284.89px!important;height:440.65px!important;transform:none}
+#s19 .compare-bw{filter:grayscale(1)}
+#s29 .synthesis-photo{left:294px!important;top:120px!important;width:192.58px!important;height:291.73px!important;transform:none;padding:0!important;background:transparent!important;box-shadow:none!important}
+
+/* Frame 161 exact correction — screen 3 only */
+#s3 .first-photo-scene .dialog-copy{
+  font-family:"Helvetica Light",Helvetica,Arial,sans-serif;
+  font-size:20px;
+  line-height:1.2;
+  letter-spacing:-.038em;
+  font-weight:300;
+}
+#s3 .first-photo-scene .q0{left:206.82px;top:204.72px;width:322px}
+#s3 .first-photo-scene .q1{left:206.82px;top:292.72px;width:322px}
+#s3 .first-photo-scene .q2{left:206.68px;top:357.42px;width:340px}
+#s3 .first-photo-scene .q1::after{
+  content:"";
+  position:absolute;
+  left:339.48px;
+  top:15.69px;
+  width:10px;
+  height:1px;
+  background:#3d3d3d;
+}
+#s3 .first-photo-scene .g1{
+  left:586.148px;
+  top:205px;
+  width:84.6436px;
+  height:223.587px;
+  transform:rotate(3.37114deg);
+  transform-origin:0 0;
+}
+#s3 .first-photo-scene .castle{
+  left:666px;
+  top:80.8013px;
+  width:296.327px;
+  height:auto;
+  padding:0;
+  background:transparent;
+  box-shadow:none;
+  transform:none;
+  transform-origin:0 0;
+}
+#s3 .first-photo-scene .d31{
+  left:546.314px;
+  top:254.588px;
+  width:10px;
+  height:1px;
+  transform:rotate(31.72deg);
+  transform-origin:left center;
+}
+#s3 .first-photo-scene .d32{
+  left:546.253px;
+  top:359.845px;
+  width:10px;
+  height:1px;
+  transform:rotate(-31.72deg);
+  transform-origin:left center;
+}
+
+/* ========================================================================== */
+/* MOBILE ADAPTATION ONLY. Desktop (>= 768px) remains exactly as approved.    */
+/* ========================================================================== */
+@media (max-width: 767px){
+  html,body{width:100%;overflow-x:hidden;background:#fff}
+  .screen,.science-horizontal,.science-panel,.attachment-horizontal,.attachment-panel{height:100svh;min-height:0}
+  .canvas{left:0;top:0;width:100%;height:100%;transform:none!important;transform-origin:0 0}
+  .body{font-size:20px;line-height:1.24;letter-spacing:-.038em}
+  .small{font-size:17px;line-height:1.22;letter-spacing:-.038em}
+  .body br,.small br{display:none}
+  .dash{width:8px;height:1px}
+  .star{width:32px}
+
+  /* Hero */
+  .hero .author,.hero .curator{top:24px;font-size:13px}
+  .hero .author{left:22px}.hero .curator{left:auto;right:22px}
+  .hero h1{left:22px;top:34%;font-size:clamp(39px,11vw,47px);line-height:.91;letter-spacing:-.018em;white-space:nowrap}
+  .hint{left:50%;top:auto;bottom:35px;width:100px;transform:translateX(-50%);font-size:16px}.hint span{font-size:26px}
+
+  /* Text-only intro */
+  .intro{left:24px;top:28%;width:calc(100% - 48px)}
+  .intro p+p{margin-top:30px}
+
+  /* First photo / girl dialogue. Photo still slides to reveal the girl. */
+  #s3 .first-photo-scene .dialog-copy{font-size:17px!important;line-height:1.2!important;width:calc(100% - 48px)!important;left:24px!important}
+  #s3 .first-photo-scene .q0{top:70px!important}
+  #s3 .first-photo-scene .q1{top:490px!important}
+  #s3 .first-photo-scene .q2{top:570px!important;width:330px!important}
+  #s3 .first-photo-scene .q1::after{display:none}
+  #s3 .first-photo-scene .castle{left:184px!important;top:150px!important;width:178px!important;height:auto!important}
+  #s3 .first-photo-scene .g1{left:108px!important;top:275px!important;width:76px!important;height:201px!important}
+  #s3 .first-photo-scene .d31{left:194px!important;top:502px!important;transform:rotate(25deg)!important}
+  #s3 .first-photo-scene .d32{left:194px!important;top:592px!important;transform:rotate(-25deg)!important}
+
+  /* Memory: one sentence first, photos below. */
+  #s4 .m1,#s5 .m2{left:24px!important;top:88px!important;width:calc(100% - 48px)!important}
+  #s4 .selfie{left:5px!important;top:400px!important;width:205px!important;height:auto!important}
+  #s4 .ground{left:196px!important;top:380px!important;width:190px!important;height:auto!important}
+
+  #s5 .art{left:4px!important;top:395px!important;width:155px!important;height:auto!important}
+  #s5 .catbench{left:120px!important;top:340px!important;width:170px!important;height:auto!important}
+  #s5 .sea{left:225px!important;top:470px!important;width:160px!important;height:auto!important}
+  #s5 .woods{left:18px!important;top:585px!important;width:205px!important;height:auto!important}
+
+  /* Uniqueness: keep the text readable in the centre, photos frame it. */
+  #s6 .unique{left:24px!important;top:335px!important;width:calc(100% - 48px)!important}
+  #s6 .unique-selfie{left:12px!important;top:45px!important;width:145px!important;height:auto!important}
+  #s6 .unique-ground{left:235px!important;top:50px!important;width:138px!important;height:auto!important}
+  #s6 .unique-art{left:4px!important;top:535px!important;width:130px!important;height:auto!important}
+  #s6 .unique-catbench{left:92px!important;top:590px!important;width:132px!important;height:auto!important}
+  #s6 .unique-sea{left:190px!important;top:550px!important;width:115px!important;height:auto!important}
+  #s6 .unique-woods{left:250px!important;top:600px!important;width:150px!important;height:auto!important}
+
+  /* Girl + Little Prince dialogue */
+  .g2{left:40px;top:105px;width:76px;height:201px}
+  .prince{left:auto;right:35px;top:440px;width:70px;height:214px}
+  .r1a,.r1b{left:120px;top:175px;width:240px}
+  .r2a{left:235px;top:520px;width:100px}
+  .r2b{left:30px;top:515px;width:240px}
+  .d71{left:108px;top:159px}.d72{left:auto;right:110px;top:505px}
+
+  .reflection{left:24px;top:27%;width:calc(100% - 48px)}
+  .reflection p+p{margin-top:34px}
+
+  .memory-video{left:24px;top:27%;width:calc(100% - 48px);height:auto;aspect-ratio:4/3;object-fit:cover}
+
+  /* Horizontal science panels */
+  .science-title{left:24px;top:42%;font-size:43px;white-space:normal;width:342px;line-height:.94}
+  .science-text{left:24px;top:18%!important;width:calc(100% - 48px);font-size:19px;line-height:1.24}
+
+  /* Ownership question */
+  .g3{left:38px;top:115px;width:76px;height:201px}
+  .question{left:120px;top:180px;width:235px}
+  .d13{left:107px;top:164px}
+  .question-prince{left:auto;right:38px;top:465px;width:68px;height:207px}
+  .question-prince-dash{left:auto;right:105px;top:522px}
+  .question-prince-copy{left:35px;top:520px;width:240px}
+
+  .final{left:24px;top:24%;width:calc(100% - 48px)}
+  .final p+p{margin-top:32px}
+
+  /* Prince -> garden -> girl sequence */
+  #s15 .possession-prince{left:55px!important;top:205px!important;width:72px!important;height:214px!important}
+  #s15 .possession-dash-prince{left:134px!important;top:267px!important}
+  #s15 .possession-prince-rep{left:145px!important;top:246px!important;width:215px!important;text-align:left!important}
+  .garden-rep{left:24px;top:65px;width:340px}
+  .garden-dash{left:326px;top:188px}
+  .garden-illustration{left:55px;top:210px;width:315px;height:245px;object-fit:contain}
+  .possession-girl{left:37px;top:500px;width:72px;height:190px}
+  .possession-dash-girl{left:110px;top:565px}
+  .possession-girl-rep{left:122px;top:535px;width:240px}
+
+  /* Worn photo */
+  .worn-photo-copy{left:24px;top:70px;width:342px}
+  .worn-photo-card{left:78px;top:400px;width:235px;height:auto;max-height:390px;object-fit:contain}
+
+  /* Rose care */
+  .rose-care-copy{left:24px;top:60px;width:342px}
+  .rose-care-girl{left:30px;top:475px;width:70px;height:185px}
+  .rose-care-rose{left:110px;top:350px;width:175px;height:175px}
+  .rose-care-prince{left:auto;right:30px;top:465px;width:67px;height:205px}
+
+  /* Second horizontal research block */
+  .attachment-question{left:24px;top:27%;width:342px;font-size:43px;line-height:.92}
+  .attachment-copy{left:24px;top:12%;width:342px;font-size:18px;line-height:1.23}
+
+  /* Colour/BW pair */
+  #s19 .compare-left{left:18px!important;top:260px!important;width:175px!important;height:auto!important}
+  #s19 .compare-right{left:198px!important;top:245px!important;width:175px!important;height:auto!important}
+
+  .restore-copy{left:24px;top:28%;width:342px}
+
+  /* Intro to the rose quote */
+  .garden-intro-girl{left:38px;top:220px;width:76px;height:201px}
+  .garden-intro-dash{left:112px;top:285px}
+  .garden-intro-copy{left:124px;top:250px;width:230px}
+
+  /* Long quote needs a smaller mobile typesetting size. */
+  .quote-copy{left:24px;top:45px;width:342px;font-size:17px;line-height:1.19}
+
+  /* Fox dialogue */
+  .fox-girl{left:38px;top:120px;width:76px;height:201px}
+  .fox-dash-girl{left:112px;top:185px}
+  .fox-girl-copy{left:124px;top:155px;width:235px}
+  .fox-prince{left:auto;right:38px;top:470px;width:68px;height:207px}
+  .fox-dash-prince{left:auto;right:108px;top:530px}
+  .fox-prince-copy{left:35px;top:515px;width:245px}
+
+  /* Travel collage: text first, photographs then cover it in the same order. */
+  .travel-copy{left:24px;top:55px;width:342px;font-size:18px;line-height:1.22}
+  #s24 .travel.p1{left:-5px!important;top:100px!important;width:185px!important;height:auto!important}
+  #s24 .travel.p2{left:175px!important;top:125px!important;width:175px!important;height:auto!important}
+  #s24 .travel.p3{left:75px!important;top:270px!important;width:245px!important;height:auto!important}
+  #s24 .travel.p4{left:-15px!important;top:425px!important;width:195px!important;height:auto!important}
+  #s24 .travel.p5{left:170px!important;top:450px!important;width:215px!important;height:auto!important}
+  #s24 .travel.p6{left:55px!important;top:605px!important;width:275px!important;height:auto!important}
+
+  /* Fear / relationship dialogue */
+  .fear-main{left:24px;top:55px;width:342px}
+  .fear-prince{left:auto;right:35px;top:300px;width:68px;height:207px}
+  .fear-dash-prince{left:auto;right:104px;top:360px}
+  .fear-prince-copy{left:35px;top:350px;width:245px}
+  .fear-girl{left:38px;top:530px;width:74px;height:196px}
+  .fear-dash-girl{left:111px;top:595px}
+  .fear-girl-copy{left:125px;top:565px;width:235px;font-size:16px}
+
+  .people-copy,.prince-story-copy,.rose-unique-copy{left:24px;top:25%;width:342px}
+
+  /* Human dialogue, then the three supplied photos. */
+  .human-girl{left:35px;top:110px;width:74px;height:196px}
+  .human-dash{left:109px;top:175px}
+  .human-r1{left:122px;top:150px;width:235px}
+  .human-prince{left:auto;right:35px;top:420px;width:68px;height:207px}
+  .human-dash-prince{left:auto;right:103px;top:480px}
+  .human-r2{left:25px;top:470px;width:255px}
+  .human-r3,.human-r4{left:24px;top:80px;width:342px;font-size:18px}
+  #s27 .hp1{left:8px!important;top:300px!important;width:180px!important;height:auto!important}
+  #s27 .hp2{left:190px!important;top:360px!important;width:190px!important;height:auto!important}
+  #s27 .hp3{left:65px!important;top:555px!important;width:190px!important;height:auto!important}
+
+  /* Four-symbol synthesis */
+  .synthesis-girl{left:25px;top:450px;width:72px;height:190px}
+  #s29 .synthesis-photo{left:100px!important;top:150px!important;width:185px!important;height:auto!important}
+  .synthesis-rose{left:102px;top:390px;width:170px;height:170px}
+  .synthesis-prince{left:auto;right:25px;top:450px;width:67px;height:205px}
+
+  /* Thesis */
+  .thesis-title{left:24px;top:26%;width:342px;font-size:43px;line-height:.92}
+
+  /* Finale: keep the same assets, just compress them into a portrait composition. */
+  #s32 .finale-main-photo{left:126px!important;top:60px!important;width:140px!important;height:auto!important}
+  #s32 .finale-girl{left:76px!important;top:205px!important;width:58px!important;height:154px!important}
+  #s32 .finale-prince{left:274px!important;top:205px!important;width:52px!important;height:159px!important}
+  #s32 .m1{left:20px!important;top:40px!important;width:72px!important;height:auto!important}
+  #s32 .m2{left:5px!important;top:130px!important;width:66px!important;height:auto!important}
+  #s32 .m3{left:-8px!important;top:235px!important;width:100px!important;height:auto!important}
+  #s32 .m4{left:15px!important;top:345px!important;width:112px!important;height:auto!important}
+  #s32 .m5{left:70px!important;top:95px!important;width:82px!important;height:auto!important}
+  #s32 .m6{left:62px!important;top:270px!important;width:84px!important;height:auto!important}
+  #s32 .m7{left:90px!important;top:20px!important;width:72px!important;height:auto!important}
+  #s32 .r1{left:282px!important;top:30px!important;width:72px!important;height:auto!important}
+  #s32 .r2{left:306px!important;top:105px!important;width:90px!important;height:auto!important}
+  #s32 .r3{left:330px!important;top:15px!important;width:70px!important;height:auto!important}
+  #s32 .r4{left:292px!important;top:245px!important;width:96px!important;height:auto!important}
+  #s32 .r5{left:320px!important;top:340px!important;width:94px!important;height:auto!important}
+  #s32 .r6{left:315px!important;top:170px!important;width:88px!important;height:auto!important}
+  #s32 .r7{left:295px!important;top:425px!important;width:90px!important;height:auto!important}
+  #s32 .r8{left:250px!important;top:365px!important;width:90px!important;height:auto!important}
+  #s32 .finale-copy{left:24px!important;top:545px!important;width:342px!important;font-size:19px!important;line-height:1.22!important}
+  #s32 .to-start{left:50%!important;top:650px!important;transform:translateX(-50%)!important}
+  #s32 .finale-note{left:24px!important;top:auto!important;bottom:16px!important;width:342px!important;font-size:9px!important;white-space:normal!important;text-align:center!important}
+}
+
+/* Mobile safe-area polish: keep mirrored characters inside the viewport.
+   Desktop remains untouched because this rule only applies below 768px. */
+@media (max-width: 767px){
+  .g2,
+  .g3,
+  .possession-girl,
+  .rose-care-girl,
+  .garden-intro-girl,
+  .fox-girl,
+  .fear-girl,
+  .human-girl,
+  .synthesis-girl,
+  #s32 .finale-girl{
+    transform-origin:50% 50%!important;
+  }
+
+  /* A little breathing room from the physical screen edge. */
+  .g2{left:34px!important}
+  .g3{left:34px!important}
+  .possession-girl{left:34px!important}
+  .rose-care-girl{left:34px!important}
+  .garden-intro-girl{left:34px!important}
+  .fox-girl{left:34px!important}
+  .fear-girl{left:34px!important}
+  .human-girl{left:34px!important}
+  .synthesis-girl{left:34px!important}
+  #s32 .finale-girl{left:80px!important}
+}
+
+
+/* ========================================================================== */
+/* MOBILE POLISH v3 — safe photo margins + compact hero lettering only.       */
+/* Desktop remains untouched.                                                 */
+/* ========================================================================== */
+@media (max-width: 767px){
+  /* Keep the first-screen title dense, like the approved desktop artwork. */
+  .hero h1{
+    letter-spacing:-.018em!important;
+    width:calc(100% - 44px)!important;
+  }
+  .hero .title-line{letter-spacing:-.055em!important}
+
+  /* Memory photographs: minimum ~18px breathing room from physical edges. */
+  #s4 .selfie{left:18px!important;top:405px!important;width:172px!important}
+  #s4 .ground{left:202px!important;top:390px!important;width:170px!important}
+
+  #s5 .art{left:18px!important;top:395px!important;width:128px!important}
+  #s5 .catbench{left:125px!important;top:345px!important;width:145px!important}
+  #s5 .sea{left:208px!important;top:480px!important;width:146px!important}
+  #s5 .woods{left:36px!important;top:590px!important;width:178px!important}
+
+  /* Uniqueness collage: photos still frame the sentence, but never touch edges. */
+  #s6 .unique-selfie{left:18px!important;top:52px!important;width:128px!important}
+  #s6 .unique-ground{left:232px!important;top:54px!important;width:128px!important}
+  #s6 .unique-art{left:18px!important;top:540px!important;width:108px!important}
+  #s6 .unique-catbench{left:96px!important;top:590px!important;width:108px!important}
+  #s6 .unique-sea{left:188px!important;top:550px!important;width:98px!important}
+  #s6 .unique-woods{left:246px!important;top:596px!important;width:126px!important}
+
+  /* Worn photo and compare pair. */
+  .worn-photo-card{left:70px!important;width:250px!important}
+  #s19 .compare-left{left:18px!important;width:164px!important}
+  #s19 .compare-right{left:208px!important;width:164px!important}
+
+  /* Travel collage: two safe columns, no image may exit the viewport. */
+  #s24 .travel.p1{left:18px!important;top:105px!important;width:164px!important}
+  #s24 .travel.p2{left:208px!important;top:130px!important;width:164px!important}
+  #s24 .travel.p3{left:55px!important;top:275px!important;width:270px!important}
+  #s24 .travel.p4{left:18px!important;top:430px!important;width:164px!important}
+  #s24 .travel.p5{left:208px!important;top:455px!important;width:164px!important}
+  #s24 .travel.p6{left:55px!important;top:610px!important;width:270px!important}
+
+  /* Human-memory photographs appear only after the Prince has faded out,
+     and stay well inside the phone frame. */
+  #s27 .hp1{left:18px!important;top:305px!important;width:164px!important}
+  #s27 .hp2{left:208px!important;top:365px!important;width:164px!important}
+  #s27 .hp3{left:92px!important;top:555px!important;width:195px!important}
+
+  /* Four-symbol scene: leave a clear lane around the Little Prince. */
+  #s29 .synthesis-photo{left:95px!important;top:150px!important;width:160px!important}
+  .synthesis-rose{left:104px!important;top:380px!important;width:150px!important;height:150px!important}
+  .synthesis-prince{right:24px!important;top:510px!important;width:58px!important;height:178px!important}
+  .synthesis-girl{left:28px!important;top:510px!important;width:62px!important;height:164px!important}
+
+  /* Finale: keep the Prince in a clean central-right lane. */
+  #s32 .finale-main-photo{left:128px!important;top:58px!important;width:134px!important}
+  #s32 .finale-girl{left:82px!important;top:215px!important;width:52px!important;height:138px!important}
+  #s32 .finale-prince{left:263px!important;top:218px!important;width:48px!important;height:147px!important}
+
+  #s32 .m1{left:20px!important;top:40px!important;width:64px!important}
+  #s32 .m2{left:18px!important;top:124px!important;width:60px!important}
+  #s32 .m3{left:18px!important;top:216px!important;width:78px!important}
+  #s32 .m4{left:20px!important;top:330px!important;width:96px!important}
+  #s32 .m5{left:78px!important;top:94px!important;width:68px!important}
+  #s32 .m6{left:72px!important;top:258px!important;width:70px!important}
+  #s32 .m7{left:92px!important;top:22px!important;width:62px!important}
+
+  #s32 .r1{left:306px!important;top:34px!important;width:60px!important}
+  #s32 .r2{left:302px!important;top:112px!important;width:68px!important}
+  #s32 .r3{left:320px!important;top:18px!important;width:52px!important}
+  #s32 .r4{left:304px!important;top:380px!important;width:68px!important}
+  #s32 .r5{left:292px!important;top:455px!important;width:78px!important}
+  #s32 .r6{left:310px!important;top:300px!important;width:62px!important}
+  #s32 .r7{left:286px!important;top:530px!important;width:82px!important}
+  #s32 .r8{left:300px!important;top:400px!important;width:62px!important}
+}
