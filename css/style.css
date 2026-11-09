@@ -612,6 +612,84 @@ p,h1,h2{margin:0}
 }
 
 
+/* WEB-RING */
+
+.web-ring {
+  width: 100%;
+  background: #ffffff;
+  color: #3d3d3d;
+  font-family: "Helvetica Light", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+}
+
+.web-ring__inner {
+  max-width: 1046px;
+  margin: 0 auto;
+  padding: 19px 62px 15px;
+}
+
+.web-ring__inner::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #3d3d3d;
+  margin-bottom: 14px;
+}
+
+.web-ring__title {
+  margin: 0 0 12px;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: -0.038em;
+}
+
+.web-ring__links {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.web-ring__links a {
+  color: #3d3d3d;
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: -0.038em;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  white-space: nowrap;
+}
+
+/* Адаптив для телефона */
+
+@media (max-width: 767px) {
+  .web-ring__inner {
+    padding: 18px 20px 26px;
+  }
+
+  .web-ring__title {
+    font-size: 18px;
+    margin-bottom: 22px;
+  }
+
+  .web-ring__links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .web-ring__links a {
+    font-size: 17px;
+    line-height: 1.35;
+    white-space: normal;
+  }
+}
+
+
 /* ========================================================================== */
 /* MOBILE POLISH v3 — safe photo margins + compact hero lettering only.       */
 /* Desktop remains untouched.                                                 */
